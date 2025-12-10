@@ -1,0 +1,16 @@
+name: math-cpp
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - cmake
+  - eigen
+  - ninja
+  - compilers
+  - python=3.10
+  - pip
+  - pybind11
+  - jupyterlab
+  - matplotlib
+  - seaborn
+  - numpy

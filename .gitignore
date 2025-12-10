@@ -1,0 +1,13 @@
+build/
+bin/
+lib/
+*.so
+*.pyd
+*.exe
+__pycache__
+.cache
+.ipynb_checkpoints
+.vscode
+.env
+.venv
+.ipynb_checkpoints/

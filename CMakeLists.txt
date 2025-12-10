@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.10)
+project(ML-Math-cpp)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+if(WIN32 AND DEFINED ENV{CONDA_PREFIX})
+    list(APPEND CMAKE_PREFIX_PATH "$ENV{CONDA_PREFIX}/Library")
+    message(STATUS "Adding Conda Library path: $ENV{CONDA_PREFIX}/Library")
+endif()
+
+find_package(Eigen3 3.3 REQUIRED)
+
+set(PYBIND11_FINDPYTHON ON)
+find_package(pybind11 REQUIRED)
+
+pybind11_add_module(mathml_cpp 
+    python_bindings/bindings.cpp
+    src/capitulo2_algebra_lineal/algebra_lineal.cpp
+)
+
+target_link_libraries(mathml_cpp PRIVATE Eigen3::Eigen)
+target_include_directories(mathml_cpp PRIVATE src/capitulo2_algebra_lineal)
+
+set_target_properties(mathml_cpp PROPERTIES 
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
+)
