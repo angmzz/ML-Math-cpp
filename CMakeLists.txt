@@ -17,10 +17,14 @@ find_package(pybind11 REQUIRED)
 pybind11_add_module(mathml_cpp 
     python_bindings/bindings.cpp
     src/capitulo2_algebra_lineal/algebra_lineal.cpp
+    src/capitulo3_geometria_analitica/geometria.cpp
 )
 
 target_link_libraries(mathml_cpp PRIVATE Eigen3::Eigen)
-target_include_directories(mathml_cpp PRIVATE src/capitulo2_algebra_lineal)
+target_include_directories(mathml_cpp PRIVATE 
+    src/capitulo2_algebra_lineal
+    src/capitulo3_geometria_analitica
+)
 
 set_target_properties(mathml_cpp PROPERTIES 
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
