@@ -1,6 +1,7 @@
 build/
 bin/
 lib/
+tests/
 *.so
 *.pyd
 *.exe
@@ -11,4 +12,3 @@ __pycache__
 .env
 .venv
 .ipynb_checkpoints/
-.tests/
