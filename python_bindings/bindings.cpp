@@ -38,4 +38,39 @@ PYBIND11_MODULE(mathml_cpp, m) {
 
   linear_algebra.def("calculate_rank", &MathMl::LinearAlgebra::CalculateRank,
                      "Calcula el rango de una matriz", py::arg("A"));
+
+  // --- Capitulo 3: Geometria Analitica ---
+  auto analytic_geometry =
+      m.def_submodule("analytic_geometry", "Capitulo 3: Geometria Analitica");
+
+  analytic_geometry.def(
+      "euclidean_norm", &MathMl::AnalyticGeometry::EuclideanNorm,
+      "Calcula la norma euclidiana de un vector", py::arg("v"));
+
+  analytic_geometry.def(
+      "manhattan_norm", &MathMl::AnalyticGeometry::ManhattanNorm,
+      "Calcula la norma manhattan de un vector", py::arg("v"));
+
+  analytic_geometry.def(
+      "chebyshev_norm", &MathMl::AnalyticGeometry::ChebyshevNorm,
+      "Calcula la norma chebyshev de un vector", py::arg("v"));
+
+  analytic_geometry.def("euclidean_distance",
+                        &MathMl::AnalyticGeometry::EuclideanDistance,
+                        "Calcula la distancia euclidiana entre dos vectores",
+                        py::arg("u"), py::arg("v"));
+
+  analytic_geometry.def("manhattan_distance",
+                        &MathMl::AnalyticGeometry::ManhattanDistance,
+                        "Calcula la distancia manhattan entre dos vectores",
+                        py::arg("u"), py::arg("v"));
+
+  analytic_geometry.def("cosine_similarity",
+                        &MathMl::AnalyticGeometry::CosineSimilarity,
+                        "Calcula la similitud coseno entre dos vectores",
+                        py::arg("u"), py::arg("v"));
+
+  analytic_geometry.def("vector_angle", &MathMl::AnalyticGeometry::VectorAngle,
+                        "Calcula el angulo entre dos vectores", py::arg("u"),
+                        py::arg("v"));
 }
