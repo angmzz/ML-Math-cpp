@@ -1,15 +1,14 @@
-#include "../src/capitulo2_algebra_lineal/algebra_lineal.h"
-#include "../src/capitulo3_geometria_analitica/geometria.h"
-#include "../src/capitulo4_descomposiciones_matrices/descomposiciones.h"
-#include "../src/capitulo5_calculo_vectorial/calculo.h"
-#include "../src/capitulo6_probabilidad/probabilidad.h"
-#include "../src/capitulo7_optimizacion/optimizacion.h"
+#include "../src/capitulo1_algebra_lineal/algebra_lineal.h"
+#include "../src/capitulo2_geometria_analitica/geometria.h"
+#include "../src/capitulo3_descomposiciones_matrices/descomposiciones.h"
+#include "../src/capitulo4_calculo_vectorial/calculo.h"
+#include "../src/capitulo5_probabilidad/probabilidad.h"
+#include "../src/capitulo6_optimizacion/optimizacion.h"
 #include <pybind11/complex.h>
 #include <pybind11/eigen.h>
 #include <pybind11/functional.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
-
 
 namespace py = pybind11;
 
