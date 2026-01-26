@@ -74,5 +74,29 @@ double CalculateTrace(const Eigen::MatrixXd &A);
  */
 int CalculateRank(const Eigen::MatrixXd &A);
 
+/**
+ * @brief Comprueba si las columnas de una matriz son linealmente
+ * independientes.
+ *
+ * @param A Matriz de entrada (vectores columna).
+ * @return true Si las columnas son linealmente independientes.
+ * @return false Si las columnas son linealmente dependientes.
+ */
+bool IsLinearlyIndependent(const Eigen::MatrixXd &A);
+
+/**
+ * @brief Realiza una transformacion afin y = Ax + b.
+ *
+ * Usada tipicamente en capas densas de redes neuronales.
+ *
+ * @param A Matriz de pesos.
+ * @param x Vector de entrada.
+ * @param b Vector de sesgo (bias).
+ * @return Eigen::VectorXd Vector resultante y.
+ */
+Eigen::VectorXd AffineForward(const Eigen::MatrixXd &A,
+                              const Eigen::VectorXd &x,
+                              const Eigen::VectorXd &b);
+
 } // namespace LinearAlgebra
 } // namespace MathMl

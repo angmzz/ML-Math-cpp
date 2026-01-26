@@ -18,12 +18,20 @@ pybind11_add_module(mathml_cpp
     python_bindings/bindings.cpp
     src/capitulo2_algebra_lineal/algebra_lineal.cpp
     src/capitulo3_geometria_analitica/geometria.cpp
+    src/capitulo4_descomposiciones_matrices/descomposiciones.cpp
+    src/capitulo5_calculo_vectorial/calculo.cpp
+    src/capitulo6_probabilidad/probabilidad.cpp
+    src/capitulo7_optimizacion/optimizacion.cpp
 )
 
 target_link_libraries(mathml_cpp PRIVATE Eigen3::Eigen)
 target_include_directories(mathml_cpp PRIVATE 
     src/capitulo2_algebra_lineal
     src/capitulo3_geometria_analitica
+    src/capitulo4_descomposiciones_matrices
+    src/capitulo5_calculo_vectorial
+    src/capitulo6_probabilidad
+    src/capitulo7_optimizacion
 )
 
 set_target_properties(mathml_cpp PROPERTIES 
